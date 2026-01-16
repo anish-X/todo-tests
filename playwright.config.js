@@ -10,8 +10,9 @@ const BASE_URL = process.env.BASE_URL || FRONTEND_URL;
 const isCI = process.env.CI === "true" || process.env.NOMAD_JOB_NAME || process.env.DOCKER_ENV;
 
 export default defineConfig({
-  // Allow testDir to be overridden, default to current directory
-  testDir: process.env.TEST_DIR || "./",
+  // testDir is relative to the config file location
+  // When running from different directory, use --config or specify test path
+  testDir: "./",
   fullyParallel: true,
   forbidOnly: !!isCI,
   retries: isCI ? 2 : 0,
