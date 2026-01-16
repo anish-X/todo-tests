@@ -7,7 +7,10 @@ const BASE_URL = process.env.BASE_URL || FRONTEND_URL;
 
 // Detect if running in CI/Docker environment
 // In Nomad/Docker, we don't want to start the web server (it's already running)
-const isCI = process.env.CI === "true" || process.env.NOMAD_JOB_NAME || process.env.DOCKER_ENV;
+const isCI =
+  process.env.CI === "true" ||
+  process.env.NOMAD_JOB_NAME ||
+  process.env.DOCKER_ENV;
 
 export default defineConfig({
   // testDir is relative to the config file location

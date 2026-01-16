@@ -3,6 +3,7 @@
 ## Issue: "No tests found" Error
 
 The error occurs because Playwright needs to:
+
 1. Find the test files
 2. Find the config file
 3. Have dependencies installed
@@ -94,6 +95,7 @@ CI=true FRONTEND_URL=http://127.0.0.1:5173 npx playwright test /app/tests --conf
 ```
 
 This explicitly:
+
 - Points to test directory: `/app/tests`
 - Points to config file: `--config=/app/tests/playwright.config.js`
 - Sets CI mode: `CI=true`
