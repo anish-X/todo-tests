@@ -15,7 +15,9 @@ const isCI =
 export default defineConfig({
   // testDir is relative to the config file location
   // When running from different directory, use --config or specify test path
-  testDir: "./",
+  testDir: process.env.TEST_DIR || "./",
+  // Match test files
+  testMatch: /.*\.test\.(js|ts)/,
   fullyParallel: true,
   forbidOnly: !!isCI,
   retries: isCI ? 2 : 0,

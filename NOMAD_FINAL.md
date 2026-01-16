@@ -34,6 +34,7 @@ CI=true FRONTEND_URL=http://127.0.0.1:5173 npx playwright test --reporter=json >
 ```
 
 **Pros:**
+
 - Ensures all dependencies are available
 - Works even if Docker image doesn't have Playwright globally
 - More reliable
@@ -48,6 +49,7 @@ CI=true FRONTEND_URL=http://127.0.0.1:5173 npx playwright test /app/tests --conf
 ```
 
 **But you still need:**
+
 - Browser installed: `npx playwright install chromium` (can be done from anywhere)
 - Config file path specified: `--config=/app/tests/playwright.config.js`
 
@@ -129,6 +131,7 @@ CI=true FRONTEND_URL=http://127.0.0.1:5173 npx playwright test /app/tests --conf
 ```
 
 But this is **less reliable** and may fail if:
+
 - Playwright version doesn't match
 - Config file can't resolve imports
 - Browser isn't installed
